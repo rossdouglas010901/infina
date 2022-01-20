@@ -1,0 +1,38 @@
+.main{
+    padding: 2rem;
+}
+
+.addDeviceGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+.addDevice{
+    max-width: 100%;
+    text-align: center;
+    padding: 2rem;
+
+    background-color: var(--primaryColor);
+    color: var(--tertiaryColor);
+    border-radius: var(--borderRadius);
+    box-shadow: var(--primaryShadow);
+    -webkit-box-shadow: var(--primaryShadow);
+
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.addDevice:hover{
+    background-color: var(--tertiaryColor);
+    color: var(--primaryColor);
+}
+
+.addDevice .uil{
+    font-size: 2rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .addDeviceGrid{
+        grid-template-columns: 1fr;
+    }
+}

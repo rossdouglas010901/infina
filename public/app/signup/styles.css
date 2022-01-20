@@ -1,0 +1,40 @@
+body{
+    display: grid;
+    place-items: center;
+}
+
+.authContainer{
+    width: calc(30rem + ( 2rem * 2));
+    display: flex; /*added*/
+    flex-direction: column; /*added*/
+
+    background-color: var(--primaryColor);
+    box-shadow: var(--primaryShadow);
+    -webkit-box-shadow: var(--primaryShadow);
+    border-Radius: var(--borderRadius)
+}
+
+.authContainerInputs{
+    width: 30rem;
+    margin: 2rem;
+    display: block;
+}
+
+.authError{
+    color: var(--quinaryColor)
+}
+
+@media only screen and (max-width: 600px) {
+    body, html{
+        background-color: var(--primaryColor);
+    }
+    .authContainer{
+        box-shadow: none;
+        border-radius: none;
+        width: 100vw;
+    }
+
+    .authContainerInputs{
+        width: calc(100vw - (2rem * 2))
+    }
+}

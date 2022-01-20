@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<body>
+    <div class="authContainer">
+        <div class="authContainerInputs">
+            <div class="logoGroup" onclick="linkAbs('')">
+                <div class="logoGroupSVGContainer">
+                    <img type="image/svg+xml" src="../../img/logos/purple.svg"/>
+                </div>
+            </div>
+            <h1>Sign Up</h1>
+            <input 
+                class="defaultTextInput fulllWidth spaceTop" 
+                type="email"
+                placeholder="Email"/>
+            <input 
+                class="defaultTextInput fulllWidth spaceTop" 
+                type="password"
+                placeholder="Password"/>
+                <input 
+                class="defaultTextInput fulllWidth spaceTop" 
+                type="password"
+                placeholder="Confirm Password"/>
+            <div class="authError">
+                <p>
+                    <i class="uil uil-key-skeleton"></i>
+                    Passwords Don't Match
+                </p>
+            </div>
+            <button class="defaultButton fulllWidth spaceTop">
+                Sign Up
+            </button>
+            <p class="spaceTop spaceBottom">
+                Already have an account? Try 
+                <a class="link" onclick="linkAbs('app/signin')">Signing In</a>
+            </p>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    let pageDetails = {
+        "pagename": "Sign Up",
+        "description": "Sign Up for infina",
+        "insertHeader": false,
+        "enableDefaultSettings": true
+    }
+    document.write(`<script type='text/javascript' src='` + window.location.protocol + `//` + window.location.host + `/js/page.js'/><\/script>`);
+</script>
+</html>

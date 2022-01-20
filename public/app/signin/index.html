@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <div class="authContainer">
+        <div class="authContainerInputs">
+            <div class="logoGroup" onclick="linkAbs('')">
+                <div class="logoGroupSVGContainer">
+                    <img type="image/svg+xml" src="../../img/logos/purple.svg"/>
+                </div>
+            </div>
+            <h1>Sign In</h1>
+            <input 
+                class="defaultTextInput fulllWidth spaceTop" 
+                type="email"
+                placeholder="Email"/>
+            <input 
+                class="defaultTextInput fulllWidth spaceTop" 
+                type="password"
+                placeholder="Password"/>
+            <div class="authError">
+                <p>
+                    <i class="uil uil-key-skeleton"></i>
+                    Wrong Username or Password
+                </p>
+            </div>
+            <button 
+                class="defaultButton fulllWidth spaceTop"
+                onclick="linkAbs('app/add');">
+                Sign In
+            </button>
+            <p class="spaceTop spaceBottom">
+                Don't have an account? Try 
+                <a class="link" onclick="linkAbs('app/signup');">Signing Up</a>
+            </p>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    let pageDetails = {
+        "pagename": "Sign In",
+        "description": "Sign In to infina",
+        "insertHeader": false,
+        "enableDefaultSettings": true
+    }
+    document.write(`<script type='text/javascript' src='` + window.location.protocol + `//` + window.location.host + `/js/page.js'/><\/script>`);
+</script>
+</html>
