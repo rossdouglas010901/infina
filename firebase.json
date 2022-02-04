@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "public/dist",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -10,6 +10,14 @@
       {
         "source":"/api",
         "function": "helloWorld"
+      },
+      {
+        "source":"/api/signIn",
+        "function": "signIn"
+      },
+      {
+        "source": "**",
+        "destination": "/error/404.html"
       }
     ]
   },

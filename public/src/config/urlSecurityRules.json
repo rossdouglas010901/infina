@@ -1,0 +1,11 @@
+{
+    "app/signIn": {
+        "requireAuth": false
+    },
+    "app/signUp": {
+        "requireAuth": false
+    },
+    "app/add": {
+        "requireAuth": true
+    }
+}

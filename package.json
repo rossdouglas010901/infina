@@ -1,5 +1,24 @@
 {
   "dependencies": {
+    "firebase": "^9.6.5",
     "firebase-tools": "^10.0.1"
-  }
+  },
+  "name": "infina-dev",
+  "description": "��#\u0000 \u0000i\u0000n\u0000f\u0000i\u0000n\u0000a\u0000\r\u0000 \u0000",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rossdouglas010901/infina.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rossdouglas010901/infina/issues"
+  },
+  "homepage": "https://github.com/rossdouglas010901/infina#readme"
 }

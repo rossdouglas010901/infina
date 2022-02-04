@@ -7,3 +7,7 @@ exports.helloWorld = functions.https.onRequest((request, response) => {
   functions.logger.info("Hello logs!", {structuredData: true});
   response.send("Hello from Firebase!");
 });
+
+// Importing External Functrions
+const signIn = require('./signIn/signIn')
+exports.signIn = signIn.signIn;

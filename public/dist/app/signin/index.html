@@ -13,21 +13,23 @@
             <h1>Sign In</h1>
             <input 
                 class="defaultTextInput fulllWidth spaceTop" 
+                id="signInEmail"
                 type="email"
                 placeholder="Email"/>
             <input 
                 class="defaultTextInput fulllWidth spaceTop" 
+                id="signInPassword"
                 type="password"
                 placeholder="Password"/>
-            <div class="authError">
-                <p>
+            <div 
+                class="authError"
+                id="signInErrorMessage">
                     <i class="uil uil-key-skeleton"></i>
-                    Wrong Username or Password
-                </p>
+                    <span id="signInErrorMessageText">Wrong Username or Password</span>
             </div>
             <button 
                 class="defaultButton fulllWidth spaceTop"
-                onclick="linkAbs('app/add');">
+                id="signInButton">
                 Sign In
             </button>
             <p class="spaceTop spaceBottom">

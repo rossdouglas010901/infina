@@ -38,6 +38,9 @@ if(pageDetails.enableDefaultSettings === true){
     createFaviconLinkTag('icon', 'image/png', baseURL + '/favicons/favicon-16x16.png', '16x16', '');
     createFaviconLinkTag('manifest', 'application/manifest+json', baseURL + '/favicons/site.webmanifest', '', '');
     createFaviconLinkTag('mask-icon', 'image/svg+xml', baseURL + '/favicons/safari-pinned-tab.svg', '', '#5f27cd');
+
+    //Linking JS
+    createScriptLinkTag(baseURL + '/js/firebase/firebase.js')
 }
 
 if(pageDetails.insertHeader === true){
@@ -82,12 +85,20 @@ function createCharsetTag(){
 }
 
 function createCSSLinkTag(URL){
-    // @info Creats A custom meta tag
+    // @info Creats A custom CSS tag
     var link = document.createElement('link');
     link.rel  = 'stylesheet';
     link.type = 'text/css';
     link.href = URL;
     appendToDocument(link)
+}
+
+function createScriptLinkTag(src){
+    // @info Creats A custom Script tag
+    var script = document.createElement('script');
+    script.setAttribute('defer', '');
+    script.src = src;
+    appendToDocument(script)
 }
 
 function createFaviconLinkTag(rel, type, href, sizes, color){

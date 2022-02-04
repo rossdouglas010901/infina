@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <div class="authContainer">
+        <div class="authContainerInputs">
+            <div class="logoGroup" onclick="linkAbs('')">
+                <div class="logoGroupSVGContainer">
+                    <img type="image/svg+xml" src="../../img/logos/purple.svg"/>
+                </div>
+            </div>
+            <h1>Yikes!</h1>
+            <p class="spaceTop spaceBottom">
+                Looks like we made a mistake on our part. Looks like you might have to head back
+                <a class="link" onclick="linkAbs('')">Home</a>
+            </p>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    let pageDetails = {
+        "pagename": "500",
+        "description": "Internal Server Error",
+        "insertHeader": false,
+        "enableDefaultSettings": true
+    }
+    document.write(`<script type='text/javascript' src='` + window.location.protocol + `//` + window.location.host + `/js/page.js'/><\/script>`);
+</script>
+</html>
