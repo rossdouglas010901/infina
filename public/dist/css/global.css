@@ -205,6 +205,7 @@ h1, h2, h3, h4, h5, h6{
 
 .navigationButtons{
     text-align: right;
+    height: 1.75rem;
 }
 
 .navigationButtons .buttons{
@@ -217,38 +218,81 @@ h1, h2, h3, h4, h5, h6{
     font-size: 1.5rem;
 }
 
-.navbarUserIcon:hover + .navbarUserIconDropdown{
-    display: block;
+.navbarUserIcon{
+    height: 100%;
+    border-radius: 1000px;
+
+    box-shadow: var(--primaryShadow);
+    -webkit-box-shadow: var(--primaryShadow);
 }
 
-.navbarUserIconDropdown:hover{
-    display: block;
+.navbarUserIcon:hover + .navbarUserIconDropdown, .navbarUserIconDropdown:hover{
+    max-height: 1000px;
+    height: auto;
+    padding-bottom: 0;
+
+    box-shadow: var(--primaryShadow);
+    -webkit-box-shadow: var(--primaryShadow);
 }
 
 .navbarUserIconDropdown{
-    display: none;
     position: absolute;
     right: 0;
     background-color: var(--primaryColor);
-    padding: 1rem;
-    padding-bottom: 0;
-    box-shadow: var(--primaryShadow);
-    -webkit-box-shadow: var(--primaryShadow);
+
+    width: 20rem;
+    max-width:  100vw;
+    overflow-y: hidden;
+
+    text-align: center;
     border-radius: var(--borderRadius);
 
-    transition: all 0.2s;
+    max-height: 0;
+    height: auto;
+    transition: max-height 0.5s ease-out, box-shadow 0.5s ease-out;
 
 }
 
+.navbarUserIconDropdownContent{
+    margin: 1rem;
+}
+
+.navbarUserIconDropdownButtons{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
 .navbarUserIconDropdownItem{
-    margin-bottom: 1rem;
     color: var(--tertiaryColor);
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: var(--borderRadius);
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--tertiaryColor);
+    box-shadow: var(--primaryShadow);
+    -webkit-box-shadow: var(--primaryShadow);
 
     transition: background-color 0.2s;
 }
 
 .navbarUserIconDropdownItem:hover{
-    background-color: var(--secondaryColor)
+    background-color: var(--tertiaryColor);
+    color: var(--primaryColor);
+}
+
+.navbarUserIconDropdownAvitar{
+    width: 5rem;
+
+    border-radius: 1000px;
+    box-shadow: var(--primaryShadow);
+    -webkit-box-shadow: var(--primaryShadow);
+}
+
+.navbarUserIconDropdownDisplayName{
+    margin-top: 1rem;
+    font-size:  1.5rem;
+
+    font-family: display, sans-serif;
 }

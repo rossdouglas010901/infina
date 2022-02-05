@@ -10,6 +10,12 @@ const route = window.location.href.replace(baseURL,'').replace(/\/$/, "").toLowe
 if(route == 'app/signin'.toLowerCase()){
     document.getElementById('signInButton').addEventListener("click", signIn, false)
 
+    document.getElementById('signInPassword').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+          signIn();
+        }
+    });
+
     hideAuthenticationError();
 }
 
@@ -19,18 +25,32 @@ async function signIn(){
     const email = document.getElementById('signInEmail').value;
     const password = document.getElementById('signInPassword').value;
     
-    console.log(email);
-    console.log(password);
     try {
         const userCredentail = await signInWithEmailAndPassword(auth, email, password).then(() => {
             window.location = baseURL + '/app/add';
-        });
-        console.log(userCredentail.user); 
+        }); 
     }catch(error){
-        console.log(error);
-        if (error.code == AuthErrorCodes.INVALID_PASSWORD || error.code == AuthErrorCodes.INVALID_EMAIL){
-            showAuthenticationError('Wrong username or password');
-            
+        switch(error.code){
+            case "auth/user-disabled":
+                showAuthenticationError('This account has been disabled');
+                break;
+            case "auth/invalid-email":
+                showAuthenticationError('The email address you enterd is invalid');
+                break;
+            case "auth/user-not-found":
+                showAuthenticationError('Username or password is incorrect');
+                break;
+            case "auth/wrong-password":
+                showAuthenticationError('Username or password is incorrect');
+                break;
+            case "auth/network-request-failed":
+                showAuthenticationError('Network error, Check your internet connection or firewall');
+                break;
+            default:
+                let errorCode = error.code.replace('auth/','').replace(/-/g, ' ');
+                errorCode = errorCode[0].toUpperCase() + errorCode.slice(1);
+                showAuthenticationError(errorCode);
+                break;
         }
     }
     

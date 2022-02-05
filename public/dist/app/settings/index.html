@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <div class='main'>
+
+        <h1 class="spaceBottom">Settings</h1>
+
+        <div class="settingsBlock">
+            <h2 class="spaceBottom">Account</h2>
+
+            <div class="settingsAccountAvitarContainer">
+                <img class="settingsAccountAvitar" id="navbarUserIcon" src="../../img/graphics/blankAvitar.svg"/>
+                <p id="settingsEmail">Email Address</p>
+            </div>
+
+            <label 
+                for="settingsDisplayName">
+                Display Name
+            </label>
+            <input 
+                id="settingsDisplayName" 
+                type="text" 
+                class="defaultTextInput fulllWidth" 
+                placeholder="Firstname Lastname">
+
+            <label 
+                class="spaceTop"
+                for="settingsPhoneNumber">
+                Phone Number
+            </label>
+            <input 
+                id="settingsPhoneNumber" 
+                type="text" 
+                class="defaultTextInput fulllWidth" 
+                placeholder="+1 (555) 867-5309">
+
+            <label 
+                class="spaceTop"
+                for="verifyEmailButton">
+                Looks like you never verified your email. you will need to do this if you want to rest your password
+            </label>
+            <button 
+                class="settingsButton fulllWidth"
+                id="verifyEmailButton">
+                Verify Email
+            </button>
+
+            <button 
+                class="defaultButton spaceTop"
+                id="saveProfileButton">
+                <i class="uil uil-save"></i> Save
+            </button>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    let pageDetails = {
+        "pagename": "Add Device",
+        "description": "Add a device to infina",
+        "insertHeader": true,
+        "enableDefaultSettings": true
+    }
+    document.write(`<script type='text/javascript' src='` + window.location.protocol + `//` + window.location.host + `/js/page.js'/><\/script>`);
+</script>
+<script>
+    changeNavbar();
+</script>
+</html>

@@ -35,7 +35,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \******************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"app/signIn":{"requireAuth":false},"app/signUp":{"requireAuth":false},"app/add":{"requireAuth":true}}');
+module.exports = JSON.parse('{"app/signIn":{"requireAuth":false},"app/signUp":{"requireAuth":false},"app/add":{"requireAuth":true},"app/settings":{"requireAuth":true}}');
 
 /***/ })
 

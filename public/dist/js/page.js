@@ -133,13 +133,22 @@ function changeNavbar(){
     }
 
     document.getElementById('navigationButtons').insertAdjacentHTML('afterBegin','\
-    <i class="uil uil-user-circle navbarIcons navbarUserIcon"></i>\
+    <img class="navbarIcons navbarUserIcon" id="navbarUserIcon" src="'+ baseURL +'/img/graphics/blankAvitar.svg"/>\
     <div class="navbarUserIconDropdown">\
-        <div class="navbarUserIconDropdownItem">\
-            <i class="uil uil-sign-out-alt"></i>Signout\
-        </div>\
-        <div class="navbarUserIconDropdownItem">\
-            <i class="uil uil-setting"></i>Settings\
+        <div class="navbarUserIconDropdownContent">\
+            <img class="navbarUserIconDropdownAvitar" id="navbarUserIconDropdownAvitar" src="'+ baseURL +'/img/graphics/blankAvitar.svg"/>\
+            <div class="navbarUserIconDropdownDisplayName" id="navbarUserIconDropdownDisplayName">Ross Campbell</div>\
+            <div class="navbarUserIconDropdownEmail" id="navbarUserIconDropdownEmail">ross.campbell@infina.ca</div>\
+            <div class="navbarUserIconDropdownButtons">\
+                <div class="navbarUserIconDropdownItem" id="signOutButton">\
+                    <i class="uil uil-sign-out-alt"></i>Signout\
+                </div>\
+                <div\
+                    class="navbarUserIconDropdownItem"\
+                    onClick="linkAbs(`app/settings`)">\
+                    <i class="uil uil-setting"></i>Settings\
+                </div>\
+            </div>\
         </div>\
     </div>\
     ');

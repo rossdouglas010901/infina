@@ -1,0 +1,60 @@
+.main{
+    padding: 2rem;
+}
+
+.settingsBlock{
+    padding: 1rem;
+
+    background-color: var(--primaryColor);
+    border-radius: var(--borderRadius);
+}
+
+.settingsBlock label{
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+    margin-left: 1rem;
+
+    color: var(--nonaryColor)
+}
+
+.settingsAccountAvitarContainer{
+    text-align: center;
+}
+
+.settingsAccountAvitar{
+    height: 5rem;
+    display: inline-block;
+
+    border-radius: 1000px;
+    box-shadow: var(--primaryShadow);
+    -webkit-box-shadow: var(--primaryShadow);
+}
+
+.settingsButton{
+    padding: 0.5rem;
+    border-style: solid;
+    border-width: 2px;
+    height: 3rem;
+    background-color: var(--primaryColor);
+
+    color: var(--tertiaryColor);
+    border-radius: var(--borderRadius);
+    border-color: var(--tertiaryColor);
+    box-shadow: var(--primaryShadow);
+    -webkit-box-shadow: var(--primaryShadow);
+
+    transition: background-color 0.2s;
+}
+
+.settingsButton:hover{
+    background-color: var(--tertiaryColor);
+    color: var(--primaryColor);
+}
+
+#saveProfileButton{
+    display:      block;
+    margin-left:  auto;
+    margin-right: 0;
+}

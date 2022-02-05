@@ -21,6 +21,8 @@ body{
 }
 
 .authError{
+    margin-top: 1rem;
+
     color: var(--quinaryColor)
 }
 

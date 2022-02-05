@@ -15,7 +15,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("\r\n// Importing Authetication\r\nPromise.all(/*! import() */[__webpack_require__.e(\"vendors-node_modules_firebase_app_dist_index_esm_js-node_modules_firebase_auth_dist_index_esm_js\"), __webpack_require__.e(\"src_auth_verify_js\")]).then(__webpack_require__.bind(__webpack_require__, /*! ./auth/verify */ \"./src/auth/verify.js\"));\r\nPromise.all(/*! import() */[__webpack_require__.e(\"vendors-node_modules_firebase_app_dist_index_esm_js-node_modules_firebase_auth_dist_index_esm_js\"), __webpack_require__.e(\"src_auth_signIn_js\")]).then(__webpack_require__.bind(__webpack_require__, /*! ./auth/signIn */ \"./src/auth/signIn.js\"));\r\n__webpack_require__.e(/*! import() */ \"src_auth_signUp_js\").then(__webpack_require__.t.bind(__webpack_require__, /*! ./auth/signUp */ \"./src/auth/signUp.js\", 23));//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvaW5kZXguanMuanMiLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBLHFTQUF1QjtBQUN2QixxU0FBdUI7QUFDdkIsa0tBQXVCIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vcHVibGljLy4vc3JjL2luZGV4LmpzP2I2MzUiXSwic291cmNlc0NvbnRlbnQiOlsiXHJcbi8vIEltcG9ydGluZyBBdXRoZXRpY2F0aW9uXHJcbmltcG9ydCgnLi9hdXRoL3ZlcmlmeScpO1xyXG5pbXBvcnQoJy4vYXV0aC9zaWduSW4nKTtcclxuaW1wb3J0KCcuL2F1dGgvc2lnblVwJyk7Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/index.js\n");
+eval("// Importing Authetication\r\nPromise.all(/*! import() */[__webpack_require__.e(\"vendors-node_modules_firebase_app_dist_index_esm_js-node_modules_firebase_auth_dist_index_esm_js\"), __webpack_require__.e(\"src_auth_verify_js\")]).then(__webpack_require__.bind(__webpack_require__, /*! ./auth/verify */ \"./src/auth/verify.js\"));\r\nPromise.all(/*! import() */[__webpack_require__.e(\"vendors-node_modules_firebase_app_dist_index_esm_js-node_modules_firebase_auth_dist_index_esm_js\"), __webpack_require__.e(\"src_auth_signIn_js\")]).then(__webpack_require__.bind(__webpack_require__, /*! ./auth/signIn */ \"./src/auth/signIn.js\"));\r\nPromise.all(/*! import() */[__webpack_require__.e(\"vendors-node_modules_firebase_app_dist_index_esm_js-node_modules_firebase_auth_dist_index_esm_js\"), __webpack_require__.e(\"src_auth_signOut_js\")]).then(__webpack_require__.bind(__webpack_require__, /*! ./auth/signOut */ \"./src/auth/signOut.js\"));\r\nPromise.all(/*! import() */[__webpack_require__.e(\"vendors-node_modules_firebase_app_dist_index_esm_js-node_modules_firebase_auth_dist_index_esm_js\"), __webpack_require__.e(\"src_auth_signUp_js\")]).then(__webpack_require__.bind(__webpack_require__, /*! ./auth/signUp */ \"./src/auth/signUp.js\"));\r\nPromise.all(/*! import() */[__webpack_require__.e(\"vendors-node_modules_firebase_app_dist_index_esm_js-node_modules_firebase_auth_dist_index_esm_js\"), __webpack_require__.e(\"src_auth_userInfoCard_js\")]).then(__webpack_require__.bind(__webpack_require__, /*! ./auth/userInfoCard */ \"./src/auth/userInfoCard.js\"));\r\n\r\n// Importing Settings\r\nPromise.all(/*! import() */[__webpack_require__.e(\"vendors-node_modules_firebase_app_dist_index_esm_js-node_modules_firebase_auth_dist_index_esm_js\"), __webpack_require__.e(\"src_settings_accountSettings_js\")]).then(__webpack_require__.bind(__webpack_require__, /*! ./settings/accountSettings */ \"./src/settings/accountSettings.js\"));//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvaW5kZXguanMuanMiLCJtYXBwaW5ncyI6IkFBQUE7QUFDQSxxU0FBdUI7QUFDdkIscVNBQXVCO0FBQ3ZCLHdTQUF3QjtBQUN4QixxU0FBdUI7QUFDdkIsdVRBQTZCO0FBQzdCO0FBQ0E7QUFDQSw0VUFBb0MiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9wdWJsaWMvLi9zcmMvaW5kZXguanM/YjYzNSJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBJbXBvcnRpbmcgQXV0aGV0aWNhdGlvblxyXG5pbXBvcnQoJy4vYXV0aC92ZXJpZnknKTtcclxuaW1wb3J0KCcuL2F1dGgvc2lnbkluJyk7XHJcbmltcG9ydCgnLi9hdXRoL3NpZ25PdXQnKTtcclxuaW1wb3J0KCcuL2F1dGgvc2lnblVwJyk7XHJcbmltcG9ydCgnLi9hdXRoL3VzZXJJbmZvQ2FyZCcpO1xyXG5cclxuLy8gSW1wb3J0aW5nIFNldHRpbmdzXHJcbmltcG9ydCgnLi9zZXR0aW5ncy9hY2NvdW50U2V0dGluZ3MnKTsiXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./src/index.js\n");
 
 /***/ })
 
@@ -49,36 +49,6 @@ eval("\r\n// Importing Authetication\r\nPromise.all(/*! import() */[__webpack_re
 /******/ 	__webpack_require__.m = __webpack_modules__;
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/create fake namespace object */
-/******/ 	(() => {
-/******/ 		var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
-/******/ 		var leafPrototypes;
-/******/ 		// create a fake namespace object
-/******/ 		// mode & 1: value is a module id, require it
-/******/ 		// mode & 2: merge all properties of value into the ns
-/******/ 		// mode & 4: return value when already ns object
-/******/ 		// mode & 16: return value when it's Promise-like
-/******/ 		// mode & 8|1: behave like require
-/******/ 		__webpack_require__.t = function(value, mode) {
-/******/ 			if(mode & 1) value = this(value);
-/******/ 			if(mode & 8) return value;
-/******/ 			if(typeof value === 'object' && value) {
-/******/ 				if((mode & 4) && value.__esModule) return value;
-/******/ 				if((mode & 16) && typeof value.then === 'function') return value;
-/******/ 			}
-/******/ 			var ns = Object.create(null);
-/******/ 			__webpack_require__.r(ns);
-/******/ 			var def = {};
-/******/ 			leafPrototypes = leafPrototypes || [null, getProto({}), getProto([]), getProto(getProto)];
-/******/ 			for(var current = mode & 2 && value; typeof current == 'object' && !~leafPrototypes.indexOf(current); current = getProto(current)) {
-/******/ 				Object.getOwnPropertyNames(current).forEach((key) => (def[key] = () => (value[key])));
-/******/ 			}
-/******/ 			def['default'] = () => (value);
-/******/ 			__webpack_require__.d(ns, def);
-/******/ 			return ns;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
