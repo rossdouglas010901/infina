@@ -41,12 +41,14 @@ async function updateUserInfo(){
       });
 }
 
-// auth.onAuthStateChanged(function(user) {
-//     if(auth.currentUser.emailVerified === true){
-//         const verifyEmailButton = document.getElementById('verifyEmailButton');
-//         verifyEmailButton.style.display = "none";
-//     }
-// });
+auth.onAuthStateChanged(function(user) {
+    if(auth.currentUser.emailVerified === true){
+        const verifyEmailButton = document.getElementById('verifyEmailButton');
+        verifyEmailButton.style.display = "none";
+        const verifyEmailLabel = document.getElementById('verifyEmailLabel');
+        verifyEmailLabel.style.display = "none";
+    }
+});
 
 async function verifyEmail() {
     sendEmailVerification(auth.currentUser)
