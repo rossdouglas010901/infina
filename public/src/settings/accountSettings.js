@@ -16,8 +16,16 @@ auth.onAuthStateChanged(function(user) {
         const saveProfileButton = document.getElementById('saveProfileButton');
         saveProfileButton.addEventListener("click", updateUserInfo, false)
 
-        const settingsEmail = document.getElementById('settingsEmail');
-        settingsEmail.innerText = auth.currentUser.email;
+        const settingsAccountUserCardDisplayName = document.getElementById('settingsAccountUserCardDisplayName');
+        const settingsAccountUserCardEmail = document.getElementById('settingsAccountUserCardEmail');
+
+        if(auth.currentUser.displayName !== null){
+            settingsAccountUserCardDisplayName.innerText = auth.currentUser.displayName;
+            settingsAccountUserCardEmail.innerText = auth.currentUser.email;
+        }else{
+            settingsAccountUserCardDisplayName.innerText = auth.currentUser.email;
+            settingsAccountUserCardEmail.style.display = 'none';
+        }
 
         const settingsDisplayName = document.getElementById('settingsDisplayName');
         settingsDisplayName.value = auth.currentUser.displayName;

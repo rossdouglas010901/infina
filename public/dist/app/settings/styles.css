@@ -58,3 +58,15 @@
     margin-left:  auto;
     margin-right: 0;
 }
+
+.settingsAccountUserCardDisplayName{
+    margin-top: 1rem;
+    font-size:  1.5rem;
+    margin-bottom: 0;
+
+    font-family: display, sans-serif;
+}
+
+.settingsAccountUserCardEmail{
+    margin-top: 0.25rem;
+}
