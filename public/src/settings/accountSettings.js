@@ -5,6 +5,7 @@ import { getAuth, updateProfile, sendEmailVerification, onAuthStateChanged } fro
 import { getFirebaseApp } from "../config/firebase.js";
 import { updateUI } from "../functions/update";
 import { importELemntsByID } from "../functions/dom"
+import { enableSaveButton, disableSaveButton } from "../functions/settings"
 
 // Setting Up modules
 const firebaseApp = getFirebaseApp();
@@ -14,6 +15,9 @@ const auth = getAuth(firebaseApp);
 const baseURL = window.location.protocol + '//' + window.location.host + '/';
 const route = window.location.href.replace(baseURL,'').replace(/\/$/, "").toLowerCase();
 
+// running alow save on page load incse the ui Updates and chnages werent saved yet
+allowSave();
+
 // Setting Up event listeners
 auth.onAuthStateChanged(function(user) {
     if (user && route == "app/settings") {
@@ -21,11 +25,20 @@ auth.onAuthStateChanged(function(user) {
         // Getting elements
         const elmt = importELemntsByID([
             "verifyEmailButton",
-            "saveProfileButton"
+            "saveProfileButton",
+            "settingsDisplayName",
+            "settingsEmail",
+            "settingsPhoneNumber"
         ]);
 
-        elmt.verifyEmailButton.addEventListener("click", verifyEmail, false)
-        elmt.saveProfileButton.addEventListener("click", updateUserInfo, false)
+        // Adding event listners for buttons
+        elmt.verifyEmailButton.addEventListener("click", verifyEmail, false);
+        elmt.saveProfileButton.addEventListener("click", updateUserInfo, false);
+
+        // Adding event listerns for the save button
+        elmt.settingsDisplayName.addEventListener("input", allowSave, false);
+        elmt.settingsEmail.addEventListener("input", allowSave, false);
+        elmt.settingsPhoneNumber.addEventListener("input", allowSave, false);
     }
 });
 
@@ -35,17 +48,25 @@ async function updateUserInfo(){
     // Getting Elements
     const elmt = importELemntsByID([
         "settingsDisplayName",
-        "settingsPhoneNumber"
+        "saveProfileButton"
     ]);
 
+    let newUsername;
+
+    if(auth.currentUser.displayName !== elmt.settingsDisplayName.value
+    && elmt.settingsDisplayName.value !== null){
+        newUsername = elmt.settingsDisplayName.value.trim().replace(/ +(?= )/g,'');
+    }
+
     updateProfile(auth.currentUser, {
-        displayName: elmt.settingsDisplayName.value,
-        phoneNumber: elmt.settingsPhoneNumber.value
+        displayName: newUsername
       }).then(() => {
-        alert('Profile Updated');
+
+        elmt.saveProfileButton.innerHTML = '<i class="uil uil-check"></i> Saved';
+
         updateUI();
       }).catch((error) => {
-        alert('Something went wrong');
+        elmt.saveProfileButton.innerHTML = '<i class="uil uil-times"></i> Unable to Save';
       });
 }
 
@@ -58,3 +79,30 @@ async function verifyEmail() {
     });
 }
 
+function allowSave(){
+    auth.onAuthStateChanged(function(user) {
+        if (user && route == "app/settings") {
+    
+            // Getting Elements
+            const elmt = importELemntsByID([
+                "settingsDisplayName",
+                "settingsEmail",
+                "settingsPhoneNumber",
+                "saveProfileButton"
+            ]);
+
+            elmt.saveProfileButton.innerHTML = '<i class="uil uil-save"></i> Save';
+        
+            if(elmt.settingsDisplayName.value !== user.displayName
+            && elmt.settingsEmail.value !== user.email
+            && elmt.settingsPhoneNumber.value !== user.phoneNumber){
+                enableSaveButton('saveProfileButton');
+            }
+        }
+    });
+}
+
+
+function disAllowSave(){
+    disableSaveButton('saveProfileButton');
+}

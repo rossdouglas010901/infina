@@ -156,6 +156,13 @@ h1, h2, h3, h4, h5, h6{
     transition: background-color 0.2s;
 }
 
+.disabledButton{
+    background-color: var(--nonaryColor) !important;
+    opacity: .5 !important;
+
+    cursor: not-allowed;
+}
+
 /* Inputs */
 
 .defaultTextInput{

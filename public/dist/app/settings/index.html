@@ -28,14 +28,29 @@
 
             <label 
                 class="spaceTop"
+                for="settingsEmail">
+                Email (Coming Soon)
+            </label>
+            <input 
+                id="settingsEmail" 
+                type="email" 
+                class="defaultTextInput fulllWidth" 
+                placeholder="something@awsome.com"
+                disabled
+                style="cursor: not-allowed;">
+
+            <label 
+                class="spaceTop"
                 for="settingsPhoneNumber">
-                Phone Number
+                Phone Number (Coming Soon)
             </label>
             <input 
                 id="settingsPhoneNumber" 
                 type="text" 
                 class="defaultTextInput fulllWidth" 
-                placeholder="+1 (555) 867-5309">
+                placeholder="+1 (555) 867-5309"
+                disabled
+                style="cursor: not-allowed;">
 
             <label 
                 class="spaceTop"
@@ -59,8 +74,8 @@
 </body>
 <script type="text/javascript">
     let pageDetails = {
-        "pagename": "Add Device",
-        "description": "Add a device to infina",
+        "pagename": "Settings",
+        "description": "Change your settings for your infina account",
         "insertHeader": true,
         "enableDefaultSettings": true
     }

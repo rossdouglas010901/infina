@@ -45,6 +45,9 @@ module.exports.updateSettingsUIAccount = async function () {
                     "verifyEmailLabel"
                 ]);
 
+                // Diableing save button by default, it is up to accountSettings.js to enable it when needed
+                exports.disableSaveButton('saveProfileButton');
+
                 // Setting the sisplay name & email
                 if(user.displayName !== null){
                     elmt.settingsAccountUserCardDisplayName.innerText = user.displayName;
@@ -69,3 +72,19 @@ module.exports.updateSettingsUIAccount = async function () {
     });
 
 };
+
+module.exports.disableSaveButton = function (buttonID) {
+    // Getting elements
+    button = document.getElementById(buttonID);
+
+    button.disabled = true;
+    button.classList.add("disabledButton");
+}
+
+module.exports.enableSaveButton = function (buttonID) {
+    // Getting elements
+    button = document.getElementById(buttonID);
+
+    button.disabled = false;
+    button.classList.remove("disabledButton");
+}
