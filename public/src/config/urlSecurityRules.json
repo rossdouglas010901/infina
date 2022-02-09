@@ -1,9 +1,13 @@
 {
-    "app/signIn": {
-        "requireAuth": false
+    "app/signin": {
+        "requireAuth": false,
+        "avaibleWhenAuthenticated": false,
+        "AuthenticatedRedirrectionUrl": "/app/add/"
     },
-    "app/signUp": {
-        "requireAuth": false
+    "app/signip": {
+        "requireAuth": false,
+        "avaibleWhenAuthenticated": false,
+        "AuthenticatedRedirrectionUrl": "/app/add/"
     },
     "app/add": {
         "requireAuth": true

@@ -11,8 +11,15 @@ const route = window.location.href.replace(baseURL,'').replace(/\/$/, "").toLowe
 onAuthStateChanged(auth, user => {
     if(user == null){
         for (const [key, value] of Object.entries(urlSecurityRules)) {
-            if(key == route && value.requireAuth === true){
+            if(key.toLocaleLowerCase() == route && value.requireAuth === true){
                 window.location = baseURL + '/app/signIn'
+            }
+        }
+    }
+    if(user !== null){
+        for (const [key, value] of Object.entries(urlSecurityRules)) {
+            if(key.toLocaleLowerCase() == route && value.avaibleWhenAuthenticated === false){
+                window.location = baseURL + value.AuthenticatedRedirrectionUrl
             }
         }
     }
