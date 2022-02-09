@@ -296,3 +296,9 @@ h1, h2, h3, h4, h5, h6{
 
     font-family: display, sans-serif;
 }
+
+@media only screen and (max-width: 600px) {
+    .navbarUserIconDropdown{
+        width: 100vw;
+    }
+}
