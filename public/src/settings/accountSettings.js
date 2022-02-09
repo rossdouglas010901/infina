@@ -1,67 +1,60 @@
+// Importing External Modules
 import { getAuth, updateProfile, sendEmailVerification, onAuthStateChanged } from "firebase/auth";
-import { getFirebaseApp } from "../config/firebase.js";
 
+// Importing Internal Modules
+import { getFirebaseApp } from "../config/firebase.js";
+import { updateUI } from "../functions/update";
+import { importELemntsByID } from "../functions/dom"
+
+// Setting Up modules
 const firebaseApp = getFirebaseApp();
 const auth = getAuth(firebaseApp);
 
+// Setting up route
 const baseURL = window.location.protocol + '//' + window.location.host + '/';
 const route = window.location.href.replace(baseURL,'').replace(/\/$/, "").toLowerCase();
 
-//Popluationg the UI
+// Setting Up event listeners
 auth.onAuthStateChanged(function(user) {
     if (user && route == "app/settings") {
-        const verifyEmailButton = document.getElementById('verifyEmailButton');
-        verifyEmailButton.addEventListener("click", verifyEmail, false)
 
-        const saveProfileButton = document.getElementById('saveProfileButton');
-        saveProfileButton.addEventListener("click", updateUserInfo, false)
+        // Getting elements
+        const elmt = importELemntsByID([
+            "verifyEmailButton",
+            "saveProfileButton"
+        ]);
 
-        const settingsAccountUserCardDisplayName = document.getElementById('settingsAccountUserCardDisplayName');
-        const settingsAccountUserCardEmail = document.getElementById('settingsAccountUserCardEmail');
-
-        if(auth.currentUser.displayName !== null){
-            settingsAccountUserCardDisplayName.innerText = auth.currentUser.displayName;
-            settingsAccountUserCardEmail.innerText = auth.currentUser.email;
-        }else{
-            settingsAccountUserCardDisplayName.innerText = auth.currentUser.email;
-            settingsAccountUserCardEmail.style.display = 'none';
-        }
-
-        const settingsDisplayName = document.getElementById('settingsDisplayName');
-        settingsDisplayName.value = auth.currentUser.displayName;
-
-        const settingsPhoneNumber = document.getElementById('settingsPhoneNumber');
-        settingsPhoneNumber.value = auth.currentUser.phoneNumber;
-
+        elmt.verifyEmailButton.addEventListener("click", verifyEmail, false)
+        elmt.saveProfileButton.addEventListener("click", updateUserInfo, false)
     }
 });
 
+// Updating User Info
 async function updateUserInfo(){
-    const settingsDisplayName = document.getElementById('settingsDisplayName');
-    const settingsPhoneNumber = document.getElementById('settingsPhoneNumber');
+
+    // Getting Elements
+    const elmt = importELemntsByID([
+        "settingsDisplayName",
+        "settingsPhoneNumber"
+    ]);
+
     updateProfile(auth.currentUser, {
-        displayName: settingsDisplayName.value,
-        phoneNumber: settingsPhoneNumber.value
+        displayName: elmt.settingsDisplayName.value,
+        phoneNumber: elmt.settingsPhoneNumber.value
       }).then(() => {
         alert('Profile Updated');
+        updateUI();
       }).catch((error) => {
         alert('Something went wrong');
       });
 }
 
-auth.onAuthStateChanged(function(user) {
-    if(auth.currentUser.emailVerified === true){
-        const verifyEmailButton = document.getElementById('verifyEmailButton');
-        verifyEmailButton.style.display = "none";
-        const verifyEmailLabel = document.getElementById('verifyEmailLabel');
-        verifyEmailLabel.style.display = "none";
-    }
-});
-
+// Sending verification email
 async function verifyEmail() {
     sendEmailVerification(auth.currentUser)
     .then(() => {
         alert('verification Email sent')
+        updateUI();
     });
 }
 
