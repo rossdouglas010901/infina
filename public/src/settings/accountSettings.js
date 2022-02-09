@@ -74,7 +74,11 @@ async function updateUserInfo(){
 async function verifyEmail() {
     sendEmailVerification(auth.currentUser)
     .then(() => {
-        alert('verification Email sent')
+        const elmt = importELemntsByID([
+            "verifyEmailButton"
+        ]);
+
+        elmt.verifyEmailButton.innerHTML = '<i class="uil uil-envelope-redo"></i> Re-Send Verification Email';
         updateUI();
     });
 }
