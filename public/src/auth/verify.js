@@ -12,7 +12,7 @@ onAuthStateChanged(auth, user => {
     if(user == null){
         for (const [key, value] of Object.entries(urlSecurityRules)) {
             if(key.toLocaleLowerCase() == route && value.requireAuth === true){
-                window.location = baseURL + '/app/signIn'
+                window.location = baseURL + '/app/signin'
             }
         }
     }

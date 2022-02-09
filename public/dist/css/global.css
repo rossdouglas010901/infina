@@ -125,8 +125,8 @@ h1, h2, h3, h4, h5, h6{
 .buttonHollowDefault{
     height: 2rem;
     padding: 0 1rem 0 1rem;
-    max-width: 100%;
-    width: 6rem;
+    max-width: 10rem;
+    min-width: 6rem;
 
     border-radius: calc( var(--borderRadius) / 2 );
     border-style: solid;

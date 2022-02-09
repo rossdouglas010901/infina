@@ -53,10 +53,10 @@ if(pageDetails.insertHeader === true){
             <h2>infina</h2>\
         </div>\
         <div class="navigationButtons" id="navigationButtons">\
-            <button class="buttonHollowSecondary" onclick="linkAbs(`app/signup`)">\
+            <button class="buttonHollowSecondary" id="signUpNavbarButton" onclick="linkAbs(`app/signup`)">\
                 Sign Up\
             </button>\
-            <button class="buttonHollowDefault" onclick="linkAbs(`app/signin`)">\
+            <button class="buttonHollowDefault" id="signInNavbarButton" onclick="linkAbs(`app/signin`)">\
                 Sign In\
             </button>\
         </div>\

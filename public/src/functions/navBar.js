@@ -20,14 +20,17 @@ module.exports.updateNavbarUI = async function () {
         "navbarUserIcon",
         "navbarUserIconDropdownAvitar",
         "navbarUserIconDropdownDisplayName",
-        "navbarUserIconDropdownEmail"
+        "navbarUserIconDropdownEmail",
+        "signUpNavbarButton",
+        "signInNavbarButton",
+        "openAppNavbarButton"
     ]);
     
     //Gathering current User user info
     auth.onAuthStateChanged(function(user) {
         // Checking if elemnts and user object are avaible
         if (user
-        && elmt.navbarUserIcon 
+         
         && elmt.navbarUserIconDropdownAvitar
         && elmt.navbarUserIconDropdownDisplayName
         && elmt.navbarUserIconDropdownEmail){
@@ -55,6 +58,16 @@ module.exports.updateNavbarUI = async function () {
                 elmt.navbarUserIconDropdownDisplayName.innerText = 'Anonomus User';
             }
 
+        }
+
+        if(elmt.signUpNavbarButton
+        && elmt.signInNavbarButton){
+            // If the default navbar is active and the user is signed in hide sign up button
+            elmt.signUpNavbarButton.style.display = "none";
+
+            // highjacking sign in button to instead open app
+            elmt.signInNavbarButton.innerText = "Open App";
+            elmt.signInNavbarButton.setAttribute('onclick','linkAbs(`app/add`)')
         }
     });
 }
