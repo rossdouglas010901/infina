@@ -1,0 +1,51 @@
+body, html{
+    background-color: #ffffff !important;
+    height: 100%;
+
+    overflow-x: hidden;
+}
+
+.homepageSplash{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.homepageSplashImage{
+    max-width: 100%;
+}
+
+.homepageSplashTitle{
+    font-size: 4rem;
+    margin-bottom: 0.75rem;
+}
+
+.homepageSplashSubText{
+    font-size: 2rem;
+
+}
+
+.homepageSplashText{
+    padding: 25%;
+}
+
+.breakupText{
+    width: calc(100% -10rem);
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-bottom: 5rem;
+    font-size: 1.5rem;
+    color: #363636;
+    text-align: center;
+}
+
+.main{
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .homepageSplash{
+        grid-template-columns: 1fr;
+    }
+}
